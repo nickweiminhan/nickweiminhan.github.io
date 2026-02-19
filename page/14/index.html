@@ -1,0 +1,749 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://nickweiminhan.github.io/page/14/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"nickweiminhan.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          style="margin-top: 0">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/21/2025-03-21-%E5%91%A8%E4%BA%94/" target="_self">
+          2025-03-21-周五
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/21/2025-03-21-%E5%91%A8%E4%BA%94/" target="_self">
+        <div>
+          面试总结 啥都没干  正文 正规网址https://recruit.cscec.com/recruit#/index_nav?company_id=1873&amp;contract_unit=31997577  ​		假冒网址 ​		https://recruit.cscec.com/#/role_error?role_name=%E5%91%98%E5%B7%A5&amp;next=~2F 1
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-21 21:00" pubdate>
+              2025-03-21
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/20/2025-03-20-%E5%91%A8%E5%9B%9B/" target="_self">
+          2025-03-20-周四
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/20/2025-03-20-%E5%91%A8%E5%9B%9B/" target="_self">
+        <div>
+          面试总结 啥都没干  正文 ，， 测评做完了 （已投递）交通银行，已投递， （已投递）民生银行，已投递， （已投递）华夏银行，3个岗位已投递， （已投递）保定银行，已投递， （已投递）江西银行，卡年龄了，已投递 （已投递）中国建筑集团有限公司，官网有问题，登录不上账号，已投递， （已投递）博世，已投递，  （已投递）邮政，已投递， **（已投递）地方城商行，已投递， （已投递）北京农商银行，， （
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-20 21:00" pubdate>
+              2025-03-20
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/19/2025-03-19-%E5%91%A8%E4%B8%89%E4%BA%86/" target="_self">
+          2025-03-19-周三了
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/19/2025-03-19-%E5%91%A8%E4%B8%89%E4%BA%86/" target="_self">
+        <div>
+          面试总结 啥都没干  正文 ，， （已投递）中国建设银行，吉林省分行、科技类专项人才，科技类专项人才，已投递， （已投递）中国工商银行，已投递， （已投递）江苏农商银行，已投递， （已投递）浙江移动应届生招聘网投递简历，已投递， 测评做完了 （已投递）交通，已投递， （已投递）邮政，已投递， （已投递）地方城商行，已投递， （已投递）浦发银行，已投递， （已投递）中国能源建设集团，已投递， （已投
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-19 21:00" pubdate>
+              2025-03-19
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/18/2025-03-18-%E6%80%8E%E4%B9%88%E8%BF%98%E6%B2%A1%E5%B7%A5%E4%BD%9C%E9%83%BD%E5%91%A8%E4%BA%8C%E4%BA%86/" target="_self">
+          2025-03-18-怎么还没工作都周二了
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/18/2025-03-18-%E6%80%8E%E4%B9%88%E8%BF%98%E6%B2%A1%E5%B7%A5%E4%BD%9C%E9%83%BD%E5%91%A8%E4%BA%8C%E4%BA%86/" target="_self">
+        <div>
+          面试总结 啥都没干  正文 ，， （已投递）中国农业银行，已投递， （已投递）中国建设银行，吉林省分行、科技类专项人才，辽宁省分行，科技类专项人才，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-18 21:00" pubdate>
+              2025-03-18
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/17/2025-03-17-%E6%80%8E%E4%B9%88%E8%BF%98%E6%B2%A1%E5%B7%A5%E4%BD%9C%E9%83%BD%E5%91%A8%E4%B8%80%E4%BA%86/" target="_self">
+          2025-03-17-怎么还没工作都周一了
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/17/2025-03-17-%E6%80%8E%E4%B9%88%E8%BF%98%E6%B2%A1%E5%B7%A5%E4%BD%9C%E9%83%BD%E5%91%A8%E4%B8%80%E4%BA%86/" target="_self">
+        <div>
+          面试总结 啥都没干  正文 ，， （已投递）广发银行，已投递， （已投递）中国人寿，已投递， （已投递）中外运，已投递， （已投递）安徽中烟工业有限责任公司2025年招聘公告，年龄不符合， （已投递）江苏烟草，第1批可能性不大，第2批好一点，硕士研究生年龄不超过32周岁（1993年1月1日及以后出生），年龄符合，需要填写好多东西，还没有投递， （已投递）合肥市产业投资控股（集团）有限公司2025春
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-17 21:00" pubdate>
+              2025-03-17
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/16/2025-03-16-%E5%91%A8%E4%B8%80%E7%9A%84%E5%89%8D%E4%B8%80%E5%A4%A9/" target="_self">
+          2025-03-16-周一的前一天
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/16/2025-03-16-%E5%91%A8%E4%B8%80%E7%9A%84%E5%89%8D%E4%B8%80%E5%A4%A9/" target="_self">
+        <div>
+          面试总结 啥都没干  正文 ，， （已投递）XXXXXXXXXXXXXXXXXXXX，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-16 21:00" pubdate>
+              2025-03-16
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/15/2025-03-15-%E6%8A%A5%E5%90%8D%E4%BA%8B%E4%B8%9A%E7%BC%96%E5%92%8C%E5%8D%97%E7%BD%91/" target="_self">
+          2025-03-15-报名事业编和南网
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/15/2025-03-15-%E6%8A%A5%E5%90%8D%E4%BA%8B%E4%B8%9A%E7%BC%96%E5%92%8C%E5%8D%97%E7%BD%91/" target="_self">
+        <div>
+          面试总结 南京工业智能研究院 QKV，   正文 ，， （已过期） 安徽省，已过期， （已过期） 蚌埠市，已过期， （已过期） 五河县，已过期，中小学老师还没过期 （已过期） 南京市，已过期， （已过期） 杭州市，没找到，意味着是不是还可以报名，真的还可以报名 （已过期） 上海市，已过期， （已投递）南方电网，已投递， （已投递）XXXXXXXXXXXXXXXXXXXX，已投递， （已投递）XXX
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-15 21:00" pubdate>
+              2025-03-15
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/15/Linux%20%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E8%BF%9B%E9%98%B6%EF%BC%88%E7%9F%A5%E5%85%B6%E6%89%80%E4%BB%A5%E7%84%B6%EF%BC%89/" target="_self">
+          2025-03-15-Linux 系统操作进阶（知其所以然）
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/15/Linux%20%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E8%BF%9B%E9%98%B6%EF%BC%88%E7%9F%A5%E5%85%B6%E6%89%80%E4%BB%A5%E7%84%B6%EF%BC%89/" target="_self">
+        <div>
+          文件（夹）管理本书学习的第一步，就是要找到 Linux 终端的所在位置。目前较常见的图形化终端有 Konsole、Gnome terminal、xterm 等几种。一般安装后在各个发行版的菜单中搜索即可找到。Gnome terminal 和 Konsole 基本是当前各大流行 Linux 发行版预装最多的终端应用，功能也非常强大好用。而 xterm 是世界上第一款图形化终端软件，xterm 软件包
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-15 21:00" pubdate>
+              2025-03-15
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/14/2025-03-14-%E5%A4%8D%E4%B9%A0%E5%92%8C%E6%B5%8B%E8%AF%84/" target="_self">
+          2025-03-14-复习和测评
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/14/2025-03-14-%E5%A4%8D%E4%B9%A0%E5%92%8C%E6%B5%8B%E8%AF%84/" target="_self">
+        <div>
+          面试总结 南京工业智能研究院 QKV，   正文 终于填完了银行模版 （），， （），， （已投递） XXXXXXXXXXXXXXXX，已投递， （已投递） XXXXXXXXXXXXXXXX，已投递， （已投递） XXXXXXXXXXXXXXXX，已投递， （已投递） XXXXXXXXXXXXXXXX，已投递， （已投递） XXXXXXXXXXXXXXXX，已投递， （），， （），， （），，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-14 21:00" pubdate>
+              2025-03-14
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/03/13/2025-03-13-%E7%94%B3%E8%AF%B7%E5%8D%97%E6%96%B9%E7%94%B5%E7%BD%91%E5%92%8C%E9%93%B6%E8%A1%8C%E6%A8%A1%E7%89%88/" target="_self">
+          2025-03-13-申请南方电网和银行模版
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/13/2025-03-13-%E7%94%B3%E8%AF%B7%E5%8D%97%E6%96%B9%E7%94%B5%E7%BD%91%E5%92%8C%E9%93%B6%E8%A1%8C%E6%A8%A1%E7%89%88/" target="_self">
+        <div>
+          目录计算机，科技 正文1.   （），， （），， （已投递） 南方电网，已投递， （已投递） 华润置地2025届春季校园招聘正式启动！，无合适岗位， （已投递） 华润啤酒2025届春季校园招聘全面启动！，无合适岗位， （已投递） 中国建筑2025届春季校园招聘正式启动！，已投递， （已投递） 东阿阿胶2025届春季校园招聘全面启动！，无合适岗位， （已投递） 广州市城市规划设计有限公司2025年
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-03-13 21:00" pubdate>
+              2025-03-13
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9A%8F%E7%AC%94/">#随笔</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/13/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/#board">12</a><a class="page-number" href="/page/13/#board">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/#board">15</a><a class="page-number" href="/page/16/#board">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/#board">18</a><a class="extend next" rel="next" href="/page/15/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
