@@ -1,0 +1,680 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Nickwei">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本节描述一些在日常使用过程中你有很大概率可能遇到的问题，并提供解决方法。 01. 使用 BIOS+GPT 模式安装 Arch Linux虽然使用传统 BIOS 模式安装的场景已经越来越少，但是在某些特殊场景，如在 VPS 上安装 Arch Linux,可能依然需要使用到 BIOS 模式。本小节讲述在使用 BIOS+GPT 模式安装时，与 UEFI+GPT 模式安装的不同点，其中绝大多数步骤是相同的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025-03-11-Arch Linux 系统美化">
+<meta property="og:url" content="https://nickweiminhan.github.io/2025/03/11/Arch%20Linux%20%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E9%99%A4%E4%B8%8E%E8%A7%A3%E5%86%B3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本节描述一些在日常使用过程中你有很大概率可能遇到的问题，并提供解决方法。 01. 使用 BIOS+GPT 模式安装 Arch Linux虽然使用传统 BIOS 模式安装的场景已经越来越少，但是在某些特殊场景，如在 VPS 上安装 Arch Linux,可能依然需要使用到 BIOS 模式。本小节讲述在使用 BIOS+GPT 模式安装时，与 UEFI+GPT 模式安装的不同点，其中绝大多数步骤是相同的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-11T21:00:06.000Z">
+<meta property="article:modified_time" content="2026-02-28T05:45:38.093Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="随笔">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>2025-03-11-Arch Linux 系统美化 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"nickweiminhan.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Arch Linux 系统美化"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-03-11 21:00" pubdate>
+          2025年3月11日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Arch Linux 系统美化</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>本节描述一些在日常使用过程中你有很大概率可能遇到的问题，并提供解决方法。</p>
+<h2 id="01-使用-BIOS-GPT-模式安装-Arch-Linux"><a href="#01-使用-BIOS-GPT-模式安装-Arch-Linux" class="headerlink" title="01. 使用 BIOS+GPT 模式安装 Arch Linux"></a>01. 使用 BIOS+GPT 模式安装 Arch Linux</h2><p>虽然使用传统 BIOS 模式安装的场景已经越来越少，但是在某些特殊场景，如在 VPS 上安装 Arch Linux,可能依然需要使用到 BIOS 模式。本小节讲述在使用 BIOS+GPT 模式安装时，与 UEFI+GPT 模式安装的不同点，其中绝大多数步骤是相同的。</p>
+<ul>
+<li>安装前，在主板的 BIOS 设置中，或在 VPS 的启动设置中(如有)，将启动模式调整为传统 BIOS 模式启动。</li>
+<li>在分区时，需要额外分出一个 2M 大小的 BIOS boot 模式的分区，此分区无需进行格式化与挂载。</li>
+<li>在安装引导程序时，对应的命令修改为: <code>grub-install --target=i386-pc /dev/vda</code> 以及 <code>grub-mkconfig -o /boot/grub/grub.cfg</code>。其中，第一条命令中的<code>/dev/vda</code>为安装 GRUB 的磁盘，而非分区。具体的名字根据安装者的实际情况进行更改。</li>
+</ul>
+<h2 id="02-静态-IP-设置"><a href="#02-静态-IP-设置" class="headerlink" title="02. 静态 IP 设置"></a>02. 静态 IP 设置</h2><p>虽然使用可以自动获取 ip 地址的工具可以覆盖绝大多数场景，但是仍有部分特殊场景，如校园网，VPS 等环境下需要进行静态 IP 的设置。本小节给出一个简略的设置静态 IP 的方式。如需要设置静态 IP,需要首先禁用 dhcpcd 或 NetworkManager 等自动获取 ip 的工具。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl stop dhcpcd NetworkManager<br><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">disable</span> dhcpcd NetworkManager<br><br>BASH<br></code></pre></td></tr></table></figure>
+
+<p>接下来启用 systemd-networkd</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> --now systemd-networkd<br><br>BASH<br></code></pre></td></tr></table></figure>
+
+<p>使用<code>ip ad</code>命令查看当前网卡的名字，如这里使用名字 ens3。随后创建配置文件<code>/etc/systemd/network/10-static-ens3.network</code>。接下来在其中填入内容。其中的 ip 地址和网关需要从你的网络提供商处获取。其中的 DNS 设置同样需要在<code>/etc/resolv.conf</code>中按照前文中的方式进行设置。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs routeros">[Match]<br><span class="hljs-attribute">Name</span>=ens3<br><br>[Network]<br><span class="hljs-attribute">Address</span>=YOUR_IPV4_ADDRESS/MASK<br><span class="hljs-attribute">Gateway</span>=YOUR_IPV4_GATEWAY<br><span class="hljs-attribute">DNS</span>=8.8.8.8<br><br>[Network]<br><span class="hljs-attribute">Address</span>=YOUR_IPV6_ADDRESS/MASK<br><span class="hljs-attribute">Gateway</span>=YOUR_IPV6_GATEWAY<br><span class="hljs-attribute">DNS</span>=2001:4860:4860::8888<br><br>BASH<br></code></pre></td></tr></table></figure>
+
+<p>最后，重启服务即可。</p>
+<figure class="highlight nsis"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nsis">sudo <span class="hljs-params">system</span>ctl restart <span class="hljs-params">system</span>d-networkd<br><br>BASH<br></code></pre></td></tr></table></figure>
+
+<h2 id="03-鼠标出现按键不灵敏或失灵的现象"><a href="#03-鼠标出现按键不灵敏或失灵的现象" class="headerlink" title="03. 鼠标出现按键不灵敏或失灵的现象"></a>03. 鼠标出现按键不灵敏或失灵的现象</h2><p>一般来说大多数鼠标都是即插即用的，但 5.14 内核前后更新后可能遇到失灵的情况。根据自身鼠标品牌安装对应的驱动即可解决。<a target="_blank" rel="noopener" href="https://openrazer.github.io/#arch">相关资料</a></p>
+<h2 id="04-关机时卡住很久才能关机"><a href="#04-关机时卡住很久才能关机" class="headerlink" title="04. 关机时卡住很久才能关机"></a>04. 关机时卡住很久才能关机</h2><p>一般屏幕会出现形如<code>A stop job is running for...(1m30s)</code>的信息，这是经常会遇到的关机卡住 1 分 30 秒的问题，一般来说这种情况是出现了某个进程在关机时不愿停止，需要等到超时时间到达强行停止。通用的解决办法是调整缩短这个等待时间，建议从 1 分 30 秒调整至 30 秒，30 秒已经足够几乎所有进程正常结束。</p>
+<p>编辑 <code>/etc/systemd/system.conf</code></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vim">sudo <span class="hljs-keyword">vim</span> /etc/systemd/<span class="hljs-built_in">system</span>.<span class="hljs-keyword">conf</span><br><br>BASH<br></code></pre></td></tr></table></figure>
+
+<p>找到其中<code>DefaultTimeoutStopSec</code>一项，将其前方的井号去掉，并赋值为 30s 即可。最后执行 daemon-reload 使其生效。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reload<br><br>BASH<br></code></pre></td></tr></table></figure>
+
+<p>上述解决方案其实只是将这个等待时间缩小了，并没有解决实际问题。如果你想排查问题真正的原因所在，在关机时如果出现了<code>A stop job is running for...(1m30s)</code>的信息，耐心等待其结束关机，然后重新启动电脑，执行以下命令：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">journalctl</span> -<span class="hljs-built_in">p5</span><br><br><span class="hljs-symbol">BASH</span><br></code></pre></td></tr></table></figure>
+
+<p>按&#x2F;(斜杠键)搜索<code>Killing</code>关键字，找到你关机的时间附近所在的匹配行，你可以在附近看到到底是哪一个进程导致了 timeout,然后再去排查这个进程有什么问题即可。</p>
+<h2 id="05-磁盘容量不足的处理方式"><a href="#05-磁盘容量不足的处理方式" class="headerlink" title="05. 磁盘容量不足的处理方式"></a>05. 磁盘容量不足的处理方式</h2><p>一般使用 LVM 安装 Linux 系统则不用担心这种情况发生。但是我们使用的是传统的 ext4 经典分区方式。这种情况下一般建议在安装的开始就将根目录设置的大一些，如 100G。如果&#x2F;home 分区大小不够了，可以新安装一块硬盘，将其挂载到你想要的位置，再按照<code>基础安装</code>的步骤中重新 genfstab 一下就行了。</p>
+<p>除此之外，如果根目录容量不足，可以不定期清理一下 pacman 的缓存，详见<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache">archwiki</a>。太长不看的可以直接用下面这一行命令清理没有安装的所有缓存的包，和没有被使用的同步数据库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> pacman -Sc<br><br>BASH<br></code></pre></td></tr></table></figure>
+
+<h2 id="06-软件的降级"><a href="#06-软件的降级" class="headerlink" title="06. 软件的降级"></a>06. 软件的降级</h2><p>在 archlinux 上 偶尔会出现某一个包的最新版本有各种问题的情况，如某些软件过新, 而一些依赖并没有支持,比如<a target="_blank" rel="noopener" href="https://bugs.archlinux.org/task/74900">virtualbox 在 linux5.18 内核下的崩溃</a>，此时需要降级该包以正常使用。包可以是普通软件，也可以是内核。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">yay -S downgrade</span><br><span class="hljs-attribute"></span><br><span class="hljs-attribute">BASH</span><br></code></pre></td></tr></table></figure>
+
+<p>安装此包即可，使用方法也很简单，downgrade 后加上需要降级的包名即可，随后会提示你选择需要降级到的版本，点选即可。</p>
+<h2 id="07-升级系统时出现形如-unable-to-lock-database-的错误"><a href="#07-升级系统时出现形如-unable-to-lock-database-的错误" class="headerlink" title="07. 升级系统时出现形如 unable to lock database 的错误"></a>07. 升级系统时出现形如 unable to lock database 的错误</h2><p>可能存在升级系统时异常关机或程序异常退出的情况，或者多个 pacman 的相关程序在同时执行。移除 pacman 的 db 锁即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">rm</span> /var/lib/pacman/db.lck<br><br>BASH<br></code></pre></td></tr></table></figure>
+
+<h2 id="08-手动开关混成器"><a href="#08-手动开关混成器" class="headerlink" title="08. 手动开关混成器"></a>08. 手动开关混成器</h2><p>有时混成器会因为某些原因需要手动开启或关闭，但是目前在 KDE 下混成器在设置里无法在不关机的情况下直接关闭，下面命令提供手动开关混成器的效果。<a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/597736/disabling-kwin-compositor-from-command-line">相关资料</a></p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">qdbus org.kde.KWin <span class="hljs-string">/Compositor</span> suspend  <span class="hljs-comment">#禁用</span><br><br>qdbus org.kde.KWin <span class="hljs-string">/Compositor</span> resume   <span class="hljs-comment">#开启</span><br><br>BASH<br></code></pre></td></tr></table></figure>
+
+<h2 id="09-屏幕溢出：overscan"><a href="#09-屏幕溢出：overscan" class="headerlink" title="09. 屏幕溢出：overscan"></a>09. 屏幕溢出：overscan</h2><p>在连接一些老式的显示设备时，可能与出现<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Overscan">overscan</a>的现象，简单来说就是电视屏幕四圈会有一圈溢出了，不显示出来。对于英特尔核芯显卡，可以选择 intel panel fitter 的方式[<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/508358/overscanning-picture-problem-using-hdmi-with-intel-graphics">1]</a>。最后就是要加入到一个 service 里开机自动启动，并且是在 DE 加载完成后执行[<a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/397853/how-to-set-a-systemd-unit-to-start-after-loading-the-desktop">2]</a>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo intel_panel_fitter -<span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">A</span> -<span class="hljs-attribute">x</span> <span class="hljs-number">1230</span> -<span class="hljs-attribute">y</span> <span class="hljs-number">700</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%9A%8F%E7%AC%94/" class="print-no-link">#随笔</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>2025-03-11-Arch Linux 系统美化</div>
+      <div>https://nickweiminhan.github.io/2025/03/11/Arch Linux 常见问题排除与解决/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Nickwei</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年3月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/03/11/2025-03-11-%E5%A4%84%E7%90%86%E5%AE%8C%E9%81%97%E7%95%99%E7%9A%84%E4%BA%8B%E9%A1%B9/" title="2025-03-11-处理完遗留的事项">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2025-03-11-处理完遗留的事项</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/11/Arch%20Linux%20%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96/" title="2025-03-11-Arch Linux 系统美化">
+                        <span class="hidden-mobile">2025-03-11-Arch Linux 系统美化</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
